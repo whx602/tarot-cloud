@@ -3,8 +3,8 @@
  * GET  —— 校验 token 并返回当前用户信息（前端启动时刷新用）
  * POST —— 更新用户设置：currentSkin（当前皮肤）/ aiEnabled（AI 开关）
  */
-import { requireAuth } from '../../_shared/auth.js';
-import { ok, fail, handleOptions } from '../../_shared/response.js';
+import { requireAuth } from '../_shared/auth.js';
+import { ok, fail, handleOptions } from '../_shared/response.js';
 
 export function onRequestOptions() { return handleOptions(); }
 

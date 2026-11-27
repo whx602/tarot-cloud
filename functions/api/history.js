@@ -2,8 +2,8 @@
  * 历史记录接口 GET /api/history
  * 返回当前用户的全部抽牌记录（时间倒序，最多 100 条）。
  */
-import { requireAuth } from '../../_shared/auth.js';
-import { ok, handleOptions } from '../../_shared/response.js';
+import { requireAuth } from '../_shared/auth.js';
+import { ok, handleOptions } from '../_shared/response.js';
 
 export function onRequestOptions() { return handleOptions(); }
 
