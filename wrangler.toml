@@ -1,0 +1,15 @@
+# Cloudflare Pages 项目配置（Wrangler）
+# 说明：本项目是纯静态 + Pages Functions（无前端构建步骤）。
+
+name = "tarot-site"                 # 项目名（可改，与 Cloudflare 后台 Pages 项目名保持一致更好）
+compatibility_date = "2025-01-01"   # 兼容性日期，保持较新即可
+
+# 静态资源输出目录 = 仓库根目录（index.html、css、js 都在这里）
+pages_build_output_dir = "."
+
+# D1 数据库绑定：运行时在 functions 里用 env.DB 访问
+# 步骤：先执行  wrangler d1 create tarot-db  拿到 database_id，替换下面这行
+[[d1_databases]]
+binding = "DB"                       # 绑定名（固定为 DB，代码里写死 env.DB）
+database_name = "tarot-db"           # 数据库名（自定义）
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"   # ← 必须替换成你创建后得到的真实 id
